@@ -34,7 +34,7 @@ export class ItemDatabase {
       // If no ID is passed, get all items
       if (!id)
         return {
-          query: 'SELECT * from c'
+          query: `SELECT * from c`
         };
 
       // If an ID is passed, get that specific item
