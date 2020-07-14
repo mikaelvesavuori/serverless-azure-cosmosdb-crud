@@ -80,9 +80,9 @@ You can create a record/item with some simple string fields (`category`, `name`,
 /POST http://localhost:7071/api/create
 
 {
-	"category": "something",
-	"name": "nice name here",
-	"description": "what it is"
+  "category": "something",
+  "name": "nice name here",
+  "description": "what it is"
 }
 ```
 
@@ -130,9 +130,9 @@ You can read a single, or all, records.
     },
     {
       "id": "5667",
-			"category": "something",
-			"name": "nice name here",
-			"description": "what it is",
+      "category": "something",
+      "name": "nice name here",
+      "description": "what it is",
       "_rid": "rThBAJfch8s9AAAAAAAAAA==",
       "_self": "dbs/rThBAA==/colls/rThBAJfch8s=/docs/rThBAJfch8s9AAAAAAAAAA==/",
       "_etag": "\"0e0188f7-0000-0d00-0000-5f0d6a670000\"",
@@ -156,9 +156,9 @@ You can read a single, or all, records.
   "items": [
     {
       "id": "5667",
-			"category": "something",
-			"name": "nice name here",
-			"description": "what it is",
+      "category": "something",
+      "name": "nice name here",
+      "description": "what it is",
       "_rid": "rThBAJfch8s9AAAAAAAAAA==",
       "_self": "dbs/rThBAA==/colls/rThBAJfch8s=/docs/rThBAJfch8s9AAAAAAAAAA==/",
       "_etag": "\"0e0188f7-0000-0d00-0000-5f0d6a670000\"",
