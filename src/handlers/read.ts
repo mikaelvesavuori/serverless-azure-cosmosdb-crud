@@ -9,6 +9,7 @@ import { readMethodError } from '../infra/Errors/errorMessages';
  * @param req - Incoming HTTP request
  */
 export async function handler(context: Context, req: HttpRequest): Promise<void> {
+  // Check HTTP request for baseline requirements
   if (req.method !== 'GET') {
     context.res = {
       status: 400,
@@ -17,17 +18,20 @@ export async function handler(context: Context, req: HttpRequest): Promise<void>
     return;
   }
 
-  const id = (() => {
-    if (req.query.id) {
-      return req.query.id;
-    } else return '';
-  })();
+  // Here's where the actual application logic starts happening
+  const response = await read(
+    {
+      id: getId(req)
+    },
+    {
+      databaseName: 'CosmosDB'
+    }
+  );
 
-  const response = await read({
-    id
-  });
-
+  // Set context
   context.res = {
     body: response
   };
 }
+
+const getId = (req: HttpRequest) => (req.query.id ? req.query.id : '');

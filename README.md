@@ -1,6 +1,6 @@
 # Serverless CRUD: Azure Cosmos DB (SQL) through Azure Functions
 
-This is a starter package for doing serverless CRUD operations on Azure. See it as a good "starting point plus" (Typescript, Webpack, Serverless Framework, DDD-style structure) if you are not satisfied with the more basic examples on the web. Since Node is a bit second-rate in the Microsoft world, finding solid, bigger examples can be a tad tough. Hopefully you get going fast with this one!
+This is a starter package for doing serverless CRUD operations on Azure. See it as a good "starting point plus" (Typescript, Webpack, Serverless Framework, Clean Architecture/DDD-style structure) if you are not satisfied with the more basic examples on the web. Since Node is a bit second-rate in the Microsoft world, finding solid, bigger examples can be a tad tough. Hopefully you get going fast with this one!
 
 The code is somewhat modeled after an official Microsoft example at [https://docs.microsoft.com/en-us/azure/cosmos-db/sql-api-nodejs-get-started](https://docs.microsoft.com/en-us/azure/cosmos-db/sql-api-nodejs-get-started).
 
@@ -20,8 +20,8 @@ The code is somewhat modeled after an official Microsoft example at [https://doc
 
 ## Structure
 
-- **`deploy.sh`**: Deployment shell script
-- **`teardown.sh`**: Script to remove your resource group and anything in it
+- **`scripts/deploy.sh`**: Deployment shell script
+- **`scripts/teardown.sh`**: Script to remove your resource group and anything in it
 - **`arm/`**: Azure ARM templates to deploy some of the resources
 - **`src/app/[FUNCTION NAME]`**: Functions, methods, classes, what have you. Should be regular JS/TS and dissociated from the Azure function handler (so they can remain free-standing and testable)
 - **`src/domain/Item`**: Where we store domain objects. In our context it's just some interfaces for the "Item" construct
@@ -35,9 +35,9 @@ Run `npm install` or `yarn add`.
 
 ## Configuration
 
-Database configuration should be done in `src/interfaces/Database/config.mjs` for connection strings and such, and in `serverless.yml` for anything that has to do with the actual deployment.
+Database configuration should be done in `src/infra/Config/CosmosDBConfig.mjs` for connection strings and such, and in `serverless.yml` for anything that has to do with the actual deployment.
 
-You can get the required connection string (primary key works fine) and endpoint URI either inside of the visual Azure console or by running the bottom-most command in `deploy.sh`.
+You can get the required connection string (primary key works fine) and endpoint URI either inside of the visual Azure console or by running the bottom-most command in `./scripts/deploy.sh`.
 
 ## Log in to Azure
 
@@ -47,6 +47,8 @@ You can get the required connection string (primary key works fine) and endpoint
 Then set credentials as per instructions at [https://github.com/serverless/serverless-azure-functions#advanced-authentication](https://github.com/serverless/serverless-azure-functions#advanced-authentication).
 
 ## Development
+
+**You will need to deploy a database before doing any development! Read more in the "Deploying" section below.**
 
 Run `sls offline`. You may be asked if you want to accept incoming requests for `func`, accept those. After a bit of building files and doing its magic, you get a prompt looking like:
 
@@ -226,7 +228,7 @@ There is the possibility to test/troubleshoot individual functions by running `n
 
 ### Infrastructure
 
-Run `sh deploy.sh` or `npm run deploy:db` or `yarn deploy:db` to deploy the Azure ARM templates.
+Run `sh ./scripts/deploy.sh` or `npm run deploy:db` or `yarn deploy:db` to deploy the Azure ARM templates.
 
 ### Functions and API
 
@@ -234,7 +236,7 @@ Run `sls deploy` or `npm run deploy` or `yarn deploy` to do a regular "dev" stag
 
 ## Taking the project down
 
-Run `sh teardown.sh`.
+Run `sh ./scripts/teardown.sh` or `npm run remove:db` or `yarn remove:db` to remove the resource group with the CosmosDB instance.
 
 ## Logging and monitoring
 

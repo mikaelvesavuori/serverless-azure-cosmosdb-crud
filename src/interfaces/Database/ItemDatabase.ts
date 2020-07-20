@@ -1,31 +1,31 @@
-import { CosmosClient } from '@azure/cosmos';
-
 import { ItemCreateInterface } from '../../domain/Item/ItemCreateInterface';
 import { ItemReadInterface } from '../../domain/Item/ItemReadInterface';
 import { ItemUpdateInterface } from '../../domain/Item/ItemUpdateInterface';
 import { ItemDeleteInterface } from '../../domain/Item/ItemDeleteInterface';
-
-import { config } from './config';
-
-const { endpoint, key, databaseId, containerId } = config;
-const client = new CosmosClient({ endpoint, key });
-const database = client.database(databaseId);
-const container = database.container(containerId);
 
 /**
  * @description Item database
  * @class
  */
 export class ItemDatabase {
-  /**
-   * @description Method for creating items
-   */
-  async create(item: ItemCreateInterface) {
-    return await container.items.create(item);
+  // Yeah, using "any" is pretty shit but had to do a quick hack
+  readonly container: any;
+
+  constructor(container: any) {
+    this.container = container;
   }
 
   /**
-   * @description Method for reading items
+   * @description Method for creating item
+   */
+  async create(item: ItemCreateInterface) {
+    const createdItem = await this.container.items.create(item);
+    const { resource } = createdItem;
+    return resource;
+  }
+
+  /**
+   * @description Method for reading item(s)
    */
   async read(item: ItemReadInterface) {
     const query = (() => {
@@ -43,12 +43,12 @@ export class ItemDatabase {
       };
     })();
 
-    const { resources: items } = await container.items.query(query).fetchAll();
+    const { resources: items } = await this.container.items.query(query).fetchAll();
     return items;
   }
 
   /**
-   * @description Method for updating items
+   * @description Method for updating item
    */
   async update(item: ItemUpdateInterface) {
     const id = item.id;
@@ -63,14 +63,15 @@ export class ItemDatabase {
     if (item.description) itemToUpdate.description = item.description;
 
     // Do the update
-    const { resource: updatedItem } = await container.item(id).replace(itemToUpdate);
+    const { resource: updatedItem } = await this.container.item(id).replace(itemToUpdate);
     return updatedItem;
   }
 
   /**
-   * @description Method for deleting items
+   * @description Method for deleting item
    */
   async delete(item: ItemDeleteInterface) {
-    await container.item(item.id).delete();
+    await this.container.item(item.id).delete();
+    return `Deleted item with ID ${item.id}`;
   }
 }

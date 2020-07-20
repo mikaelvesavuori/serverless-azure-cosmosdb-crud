@@ -9,6 +9,7 @@ import { updateMethodError, updateQueryError } from '../infra/Errors/errorMessag
  * @param req - Incoming HTTP request
  */
 export async function handler(context: Context, req: HttpRequest): Promise<void> {
+  // Check HTTP request for baseline requirements
   if (req.method !== 'PATCH') {
     context.res = {
       status: 400,
@@ -17,7 +18,7 @@ export async function handler(context: Context, req: HttpRequest): Promise<void>
     return;
   }
 
-  if (!req.query.category || !req.query.category || !req.query.category) {
+  if (!req.query.id) {
     context.res = {
       status: 400,
       body: updateQueryError
@@ -25,13 +26,20 @@ export async function handler(context: Context, req: HttpRequest): Promise<void>
     return;
   }
 
-  const response = await update({
-    id: req.query.id,
-    category: req.query.category,
-    name: req.query.name,
-    description: req.query.description
-  });
+  // Here's where the actual application logic starts happening
+  const response = await update(
+    {
+      id: req.query.id,
+      category: req.query.category,
+      name: req.query.name,
+      description: req.query.description
+    },
+    {
+      databaseName: 'CosmosDB'
+    }
+  );
 
+  // Set context
   context.res = {
     body: response
   };

@@ -1,4 +1,4 @@
-export const config = {
+export const CosmosDBConfig = {
   endpoint: '<your-endpoint-uri>',
   key: '<primary_key>',
   databaseId: 'CosmosDbTest',

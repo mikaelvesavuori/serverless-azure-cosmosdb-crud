@@ -9,6 +9,7 @@ import { createMethodError, createQueryError } from '../infra/Errors/errorMessag
  * @param req - Incoming HTTP request
  */
 export async function handler(context: Context, req: HttpRequest): Promise<void> {
+  // Check HTTP request for baseline requirements
   if (req.method !== 'POST') {
     context.res = {
       status: 400,
@@ -33,12 +34,19 @@ export async function handler(context: Context, req: HttpRequest): Promise<void>
     return;
   }
 
-  const response = await create({
-    category: context.req.body.category,
-    name: context.req.body.name,
-    description: context.req.body.description
-  });
+  // Here's where the actual application logic starts happening
+  const response = await create(
+    {
+      category: context.req.body.category,
+      name: context.req.body.name,
+      description: context.req.body.description
+    },
+    {
+      databaseName: 'CosmosDB'
+    }
+  );
 
+  // Set context
   context.res = {
     body: response
   };

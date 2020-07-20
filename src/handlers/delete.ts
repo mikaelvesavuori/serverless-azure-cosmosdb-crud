@@ -1,8 +1,7 @@
 import { Context, HttpRequest } from '@azure/functions';
 
 import { deleteFromDb } from '../app/Delete/delete';
-import { deleteMethodError } from '../infra/Errors/errorMessages';
-import { deleteQueryError } from '../infra/Errors/errorMessages';
+import { deleteMethodError, deleteQueryError } from '../infra/Errors/errorMessages';
 
 /**
  * @description The handler for the "delete" function
@@ -10,6 +9,7 @@ import { deleteQueryError } from '../infra/Errors/errorMessages';
  * @param req - Incoming HTTP request
  */
 export async function handler(context: Context, req: HttpRequest): Promise<void> {
+  // Check HTTP request for baseline requirements
   if (req.method !== 'DELETE') {
     context.res = {
       status: 400,
@@ -26,10 +26,17 @@ export async function handler(context: Context, req: HttpRequest): Promise<void>
     return;
   }
 
-  const response = await deleteFromDb({
-    id: req.query.id
-  });
+  // Here's where the actual application logic starts happening
+  const response = await deleteFromDb(
+    {
+      id: req.query.id
+    },
+    {
+      databaseName: 'CosmosDB'
+    }
+  );
 
+  // Set context
   context.res = {
     body: response
   };

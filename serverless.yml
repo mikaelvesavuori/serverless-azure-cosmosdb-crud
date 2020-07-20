@@ -6,7 +6,7 @@ provider:
   region: ${opt:region, 'West Europe'}
   stage: ${opt:stage, 'dev'}
   apim: true
-  #type: Consumption'Developer', 'Standard', 'Premium', 'Basic', 'Consumption'
+  #type: Consumption 'Developer', 'Standard', 'Premium', 'Basic', 'Consumption'
 
 plugins:
   - serverless-azure-functions
