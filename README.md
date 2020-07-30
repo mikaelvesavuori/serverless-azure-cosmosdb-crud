@@ -116,7 +116,7 @@ You can read a single, or all, records.
 #### Response
 
 ```
-{
+[
   {
     "id": "8222",
     "category": "asdf",
@@ -129,7 +129,7 @@ You can read a single, or all, records.
     "name": "nice name here",
     "description": "what it is",
   }
-}
+]
 ```
 
 #### Query (read single)
@@ -141,12 +141,14 @@ You can read a single, or all, records.
 #### Response
 
 ```
-{
-  "id": "5667",
-  "category": "something",
-  "name": "nice name here",
-  "description": "what it is",
-}
+[
+  {
+    "id": "5667",
+    "category": "something",
+    "name": "nice name here",
+    "description": "what it is",
+  }
+]
 ```
 
 ### Update
