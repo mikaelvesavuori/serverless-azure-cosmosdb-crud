@@ -142,14 +142,10 @@ You can read a single, or all, records.
 
 ```
 {
-  "items": [
-    {
-      "id": "5667",
-      "category": "something",
-      "name": "nice name here",
-      "description": "what it is",
-    }
-  ]
+  "id": "5667",
+  "category": "something",
+  "name": "nice name here",
+  "description": "what it is",
 }
 ```
 
