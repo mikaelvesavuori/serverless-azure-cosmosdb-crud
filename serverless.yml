@@ -1,4 +1,4 @@
-service: azure-cosmosdb
+service: serverless-azure-cosmosdb-crud
 
 provider:
   name: azure
@@ -6,7 +6,7 @@ provider:
   region: ${opt:region, 'West Europe'}
   stage: ${opt:stage, 'dev'}
   apim: true
-  #type: Consumption 'Developer', 'Standard', 'Premium', 'Basic', 'Consumption'
+  #type: Consumption # 'Developer', 'Standard', 'Premium', 'Basic', 'Consumption'
 
 plugins:
   - serverless-azure-functions
@@ -19,50 +19,50 @@ package:
 
 functions:
   create:
-    handler: src/handlers/create.handler
+    handler: src/app/controllers/create.createController
     events:
       - http: true
         x-azure-settings:
-          name: req
-          methods: ['post']
+          name: res
+          methods: ['POST']
           authLevel: function
       - http: true
         x-azure-settings:
-          name: res
+          name: $return
           direction: out
   read:
-    handler: src/handlers/read.handler
+    handler: src/app/controllers/read.readController
     events:
       - http: true
         x-azure-settings:
           name: req
-          methods: ['get']
+          methods: ['GET']
           authLevel: function
       - http: true
         x-azure-settings:
-          name: res
+          name: $return
           direction: out
   update:
-    handler: src/handlers/update.handler
+    handler: src/app/controllers/update.updateController
     events:
       - http: true
         x-azure-settings:
           name: req
-          methods: ['patch']
+          methods: ['PATCH']
           authLevel: function
       - http: true
         x-azure-settings:
-          name: res
+          name: $return
           direction: out
   delete:
-    handler: src/handlers/delete.handler
+    handler: src/app/controllers/delete.deleteController
     events:
       - http: true
         x-azure-settings:
           name: req
-          methods: ['delete']
+          methods: ['DELETE']
           authLevel: function
       - http: true
         x-azure-settings:
-          name: res
+          name: $return
           direction: out

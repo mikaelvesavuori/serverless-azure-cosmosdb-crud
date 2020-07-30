@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="678px" preserveAspectRatio="none" style="width:1044px;height:678px;" version="1.1" viewBox="0 0 1044 678" width="1044px" zoomAndPan="magnify"><defs/><g><!--MD5=[ed1d20ea533a2a0e7df5ba3c35e56ced]
+cluster Controllers--><path d="M25,24 L99,24 A4.5,4.5 0 0 1 102,27 L109,44.4844 L676,44.4844 A3,3 0 0 1 679,47.4844 L679,105 A3,3 0 0 1 676,108 L25,108 A3,3 0 0 1 22,105 L22,27 A3,3 0 0 1 25,24 " fill="#FFFFFF" style="stroke: #000000; stroke-width: 1.5;"/><line style="stroke: #000000; stroke-width: 1.5;" x1="22" x2="109" y1="44.4844" y2="44.4844"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="74" x="26" y="38.0059">Controllers</text><!--MD5=[e80bd461753d6c5ec111731420959425]
+cluster Main--><path d="M237,132 L267,132 A4.5,4.5 0 0 1 270,135 L277,152.4844 L309,152.4844 A3,3 0 0 1 312,155.4844 L312,204 A3,3 0 0 1 309,207 L237,207 A3,3 0 0 1 234,204 L234,135 A3,3 0 0 1 237,132 " fill="#FFFFFF" style="stroke: #000000; stroke-width: 1.5;"/><line style="stroke: #000000; stroke-width: 1.5;" x1="234" x2="277" y1="152.4844" y2="152.4844"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="30" x="238" y="146.0059">Main</text><!--MD5=[114f4823940f317c08f5bedd633c9afd]
+cluster Entities--><path d="M550,414 L600,414 A4.5,4.5 0 0 1 603,417 L610,434.4844 L703,434.4844 A3,3 0 0 1 706,437.4844 L706,663 A3,3 0 0 1 703,666 L550,666 A3,3 0 0 1 547,663 L547,417 A3,3 0 0 1 550,414 " fill="#FFFFFF" style="stroke: #000000; stroke-width: 1.5;"/><line style="stroke: #000000; stroke-width: 1.5;" x1="547" x2="610" y1="434.4844" y2="434.4844"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="50" x="551" y="428.0059">Entities</text><!--MD5=[e69828dec1dbb2627e683807b1b11ce9]
+cluster Frameworks--><path d="M135,335 L214,335 A4.5,4.5 0 0 1 217,338 L224,355.4844 L504,355.4844 A3,3 0 0 1 507,358.4844 L507,556 A3,3 0 0 1 504,559 L135,559 A3,3 0 0 1 132,556 L132,338 A3,3 0 0 1 135,335 " fill="#FFFFFF" style="stroke: #000000; stroke-width: 1.5;"/><line style="stroke: #000000; stroke-width: 1.5;" x1="132" x2="224" y1="355.4844" y2="355.4844"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="79" x="136" y="349.0059">Frameworks</text><!--MD5=[6aa65ed65fe367edb52904ae892f9489]
+cluster Use cases--><path d="M456,231 L525,231 A4.5,4.5 0 0 1 528,234 L535,251.4844 L1029,251.4844 A3,3 0 0 1 1032,254.4844 L1032,308 A3,3 0 0 1 1029,311 L456,311 A3,3 0 0 1 453,308 L453,234 A3,3 0 0 1 456,231 " fill="#FFFFFF" style="stroke: #000000; stroke-width: 1.5;"/><line style="stroke: #000000; stroke-width: 1.5;" x1="453" x2="535" y1="251.4844" y2="251.4844"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="69" x="457" y="245.0059">Use cases</text><!--MD5=[a6f11bb19cee6b13000111f5ad685e8b]
+cluster Dependencies--><path d="M73,583 L167,583 A4.5,4.5 0 0 1 170,586 L177,603.4844 L177,603.4844 A3,3 0 0 1 180,606.4844 L180,663 A3,3 0 0 1 177,666 L73,666 A3,3 0 0 1 70,663 L70,586 A3,3 0 0 1 73,583 " fill="#FFFFFF" style="stroke: #000000; stroke-width: 1.5;"/><line style="stroke: #000000; stroke-width: 1.5;" x1="70" x2="177" y1="603.4844" y2="603.4844"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="94" x="74" y="597.0059">Dependencies</text><ellipse cx="273.0087" cy="74.6017" fill="#F8F8F8" rx="73.5087" ry="17.1017" style="stroke: #383838; stroke-width: 0.5;"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="121" x="212.5087" y="78.3439">controllers/create</text><ellipse cx="111.0802" cy="74.516" fill="#F8F8F8" rx="73.0802" ry="17.016" style="stroke: #383838; stroke-width: 0.5;"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="120" x="51.0802" y="78.2582">controllers/delete</text><ellipse cx="430.0172" cy="74.5034" fill="#F8F8F8" rx="68.0172" ry="16.0034" style="stroke: #383838; stroke-width: 0.5;"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="108" x="376.0172" y="78.2456">controllers/read</text><ellipse cx="587.7999" cy="74.36" fill="#F8F8F8" rx="74.7999" ry="17.36" style="stroke: #383838; stroke-width: 0.5;"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="124" x="525.7999" y="78.1022">controllers/update</text><ellipse cx="272.799" cy="178.242" fill="#F8F8F8" rx="22.799" ry="13.242" style="stroke: #383838; stroke-width: 0.5;"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="28" x="258.799" y="181.9842">main</text><ellipse cx="635.0919" cy="460.242" fill="#F8F8F8" rx="22.0919" ry="13.242" style="stroke: #383838; stroke-width: 0.5;"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="27" x="621.5919" y="463.9842">Item</text><!--MD5=[b9de1969b1072f9f565a6d0855422a46]
+entity _itemSchema--><rect fill="#F8F8F8" height="34.4844" rx="3" ry="3" style="stroke: #000000; stroke-width: 0.5;" width="92" x="589" y="616"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="72" x="599" y="638.0059">itemSchema</text><ellipse cx="635.1295" cy="524.9259" fill="#F8F8F8" rx="55.1295" ry="13.4259" style="stroke: #383838; stroke-width: 0.5;"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="75" x="597.6295" y="528.6681">itemValidator</text><ellipse cx="406.9059" cy="524.8812" fill="#F8F8F8" rx="77.4059" ry="17.8812" style="stroke: #383838; stroke-width: 0.5;"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="130" x="341.9059" y="528.6234">cleanCosmosDbItems</text><ellipse cx="326.7696" cy="383.242" fill="#F8F8F8" rx="39.7696" ry="13.242" style="stroke: #383838; stroke-width: 0.5;"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="52" x="300.7696" y="386.9842">createDb</text><!--MD5=[04a84d354d74f0407253d263a38ce83e]
+entity _ItemDatabase--><rect fill="#F8F8F8" height="34.4844" rx="3" ry="3" style="stroke: #000000; stroke-width: 0.5;" width="102" x="194" y="508"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="82" x="204" y="530.0059">ItemDatabase</text><!--MD5=[bb1f732844ca328f99920c2199c7388e]
+entity _ItemDatabaseCosmosDB--><rect fill="#F8F8F8" height="34.4844" rx="3" ry="3" style="stroke: #000000; stroke-width: 0.5;" width="168" x="323" y="443"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="148" x="333" y="465.0059">ItemDatabaseCosmosDB</text><!--MD5=[3c9816cdd5cf955808afd3010e9afefb]
+entity _ItemDatabaseInMemory--><rect fill="#F8F8F8" height="34.4844" rx="3" ry="3" style="stroke: #000000; stroke-width: 0.5;" width="159" x="148.5" y="443"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="139" x="158.5" y="465.0059">ItemDatabaseInMemory</text><ellipse cx="209.9363" cy="382.7873" fill="#F8F8F8" rx="61.9363" ry="14.7873" style="stroke: #383838; stroke-width: 0.5;"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="93" x="163.4363" y="386.5294">requestValidator</text><ellipse cx="674.0267" cy="279.6053" fill="#F8F8F8" rx="63.5267" ry="15.1053" style="stroke: #383838; stroke-width: 0.5;"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="97" x="625.5267" y="283.3475">usecases/create</text><ellipse cx="532.1268" cy="279.5254" fill="#F8F8F8" rx="63.1268" ry="15.0254" style="stroke: #383838; stroke-width: 0.5;"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="96" x="484.1268" y="283.2675">usecases/delete</text><ellipse cx="812.2159" cy="279.7432" fill="#F8F8F8" rx="59.2159" ry="14.2432" style="stroke: #383838; stroke-width: 0.5;"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="86" x="769.2159" y="283.4854">usecases/read</text><ellipse cx="951.2352" cy="279.347" fill="#F8F8F8" rx="64.7352" ry="15.347" style="stroke: #383838; stroke-width: 0.5;"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="100" x="901.2352" y="283.0892">usecases/update</text><!--MD5=[fb5a88e8f653d4d2e15e9f3b5901e9db]
+entity @azure--><rect fill="#F8F8F8" height="34.4844" rx="3" ry="3" style="stroke: #383838; stroke-width: 1.0;" width="64" x="93" y="616"/><rect fill="#F8F8F8" height="5" style="stroke: #383838; stroke-width: 1.0;" width="10" x="88" y="621"/><rect fill="#F8F8F8" height="5" style="stroke: #383838; stroke-width: 1.0;" width="10" x="88" y="640.4844"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="44" x="103" y="638.0059">@azure</text><!--MD5=[d9f85b6f0e4e911d0ecc32075ddc4568]
+link <b>controllers/create</b> to main--><path d="M273,91.808 C273,110.453 273,140.841 273,159.837 " fill="none" id="&lt;b&gt;controllers/create&lt;/b&gt;-&gt;main" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="273,164.873,277,155.873,273,159.873,269,155.873,273,164.873" style="stroke: #000000; stroke-width: 1.0;"/><!--MD5=[fe801f6483c5d430aa0cd91685485ada]
+link <b>controllers/create</b> to requestValidator--><path d="M258.802,91.374 C251.63,100.322 243.512,112.074 239,124 C207.045,208.465 207.345,318.75 208.986,362.703 " fill="none" id="&lt;b&gt;controllers/create&lt;/b&gt;-&gt;requestValidator" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="209.19,367.728,212.8216,358.5731,208.9871,362.7321,204.8281,358.8977,209.19,367.728" style="stroke: #000000; stroke-width: 1.0;"/><!--MD5=[b6826c620bfa15524a104be9268de5dd]
+link <b>controllers/create</b> to usecases/create--><path d="M297.144,90.716 C349.972,123.726 474.857,200.149 522,215 C556.082,225.736 568.792,209.806 602,223 C623.317,231.469 643.636,248.21 657.219,261.101 " fill="none" id="&lt;b&gt;controllers/create&lt;/b&gt;-&gt;usecases/create" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="660.867,264.625,657.1723,255.4954,657.2706,261.1514,651.6146,261.2497,660.867,264.625" style="stroke: #000000; stroke-width: 1.0;"/><!--MD5=[bb5932c0066bd0c68dbb2685bee3c4e5]
+link <b>controllers/delete</b> to main--><path d="M135.253,90.696 C167.594,110.958 224.189,146.418 253.763,164.947 " fill="none" id="&lt;b&gt;controllers/delete&lt;/b&gt;-&gt;main" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="258.269,167.771,252.7674,159.602,254.0324,165.1156,248.5188,166.3806,258.269,167.771" style="stroke: #000000; stroke-width: 1.0;"/><!--MD5=[de8cdeaf80e67e246b073a3fb3bbd252]
+link <b>controllers/delete</b> to requestValidator--><path d="M116.183,91.547 C132.949,143.453 185.67,306.676 203.802,362.813 " fill="none" id="&lt;b&gt;controllers/delete&lt;/b&gt;-&gt;requestValidator" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="205.447,367.904,206.486,358.1101,203.9096,363.1462,198.8735,360.5699,205.447,367.904" style="stroke: #000000; stroke-width: 1.0;"/><!--MD5=[8e68cca723431aeabd66a405d07143e1]
+link <b>controllers/delete</b> to usecases/delete--><path d="M135.158,90.75 C150.753,99.776 171.828,110.492 192,116 C216.713,122.748 285.658,109.83 307,124 C344.754,149.066 318.984,185.056 353,215 C387.346,245.235 437.053,261.35 475.376,269.768 " fill="none" id="&lt;b&gt;controllers/delete&lt;/b&gt;-&gt;usecases/delete" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="480.466,270.856,472.4998,265.0646,475.5763,269.8118,470.8291,272.8882,480.466,270.856" style="stroke: #000000; stroke-width: 1.0;"/><!--MD5=[b662c647395bf385017edef7cc95ca41]
+link <b>controllers/read</b> to main--><path d="M407.839,89.827 C376.869,109.849 321.171,145.857 291.998,164.718 " fill="none" id="&lt;b&gt;controllers/read&lt;/b&gt;-&gt;main" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="287.551,167.593,297.281,166.0675,291.7504,164.8791,292.9388,159.3485,287.551,167.593" style="stroke: #000000; stroke-width: 1.0;"/><!--MD5=[c1254c7659f1c8dbd3237abd4cf8c985]
+link <b>controllers/read</b> to requestValidator--><path d="M419.09,90.699 C382.248,142.027 262.538,308.805 222.888,364.045 " fill="none" id="&lt;b&gt;controllers/read&lt;/b&gt;-&gt;requestValidator" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="219.955,368.131,228.453,363.1527,222.8709,364.0693,221.9543,358.4872,219.955,368.131" style="stroke: #000000; stroke-width: 1.0;"/><!--MD5=[61a4040de2f77abe5bb41d7820d4e129]
+link <b>controllers/read</b> to usecases/read--><path d="M455.608,89.519 C470.065,97.386 488.492,107.332 505,116 C590.704,161 607.176,184.364 699,215 C718.685,221.568 726.155,214.312 745,223 C765.138,232.284 784.214,249.173 796.822,261.891 " fill="none" id="&lt;b&gt;controllers/read&lt;/b&gt;-&gt;usecases/read" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="800.522,265.69,797.1093,256.4513,797.0339,262.1076,791.3776,262.0322,800.522,265.69" style="stroke: #000000; stroke-width: 1.0;"/><!--MD5=[563bc650cfd8fa741f28570d7c4c93ff]
+link <b>controllers/update</b> to main--><path d="M561.585,91.03 C545.693,99.692 524.772,109.929 505,116 C480.966,123.38 473.551,118.582 449,124 C393.688,136.206 330.464,156.966 296.893,168.55 " fill="none" id="&lt;b&gt;controllers/update&lt;/b&gt;-&gt;main" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="291.766,170.327,301.5798,171.1569,296.4899,168.6886,298.9583,163.5987,291.766,170.327" style="stroke: #000000; stroke-width: 1.0;"/><!--MD5=[47cfdec9a02de62345480e0e4a6e8e01]
+link <b>controllers/update</b> to requestValidator--><path d="M572.628,91.896 C531.868,134.56 416.176,250.473 300,319 C291.397,324.074 287.675,322.051 279,327 C260.43,337.595 241.6,352.984 228.313,364.791 " fill="none" id="&lt;b&gt;controllers/update&lt;/b&gt;-&gt;requestValidator" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="224.374,368.332,233.7413,365.2899,228.0924,364.9893,228.3929,359.3404,224.374,368.332" style="stroke: #000000; stroke-width: 1.0;"/><!--MD5=[4b41f8754432b9769b904a2a8ca85892]
+link <b>controllers/update</b> to usecases/update--><path d="M621.836,90.141 C677.268,114.672 790.144,166.93 879,223 C897.144,234.449 916.321,249.388 930.317,260.883 " fill="none" id="&lt;b&gt;controllers/update&lt;/b&gt;-&gt;usecases/update" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="934.488,264.332,930.1028,255.5133,930.6353,261.145,925.0036,261.6776,934.488,264.332" style="stroke: #000000; stroke-width: 1.0;"/><!--MD5=[5e9716a9e341c3ba0e90a8fe246ec8e3]
+link createDb to @azure--><path d="M300.592,392.861 C293.642,394.873 286.1,396.775 279,398 C263.865,400.611 151.93,395.209 141,406 C85.6138,460.683 106.29,565.855 118.534,610.7948 " fill="none" id="createDb-&gt;@azure" style="stroke: #000000; stroke-width: 0.5;"/><polygon fill="#000000" points="119.907,615.716,121.3404,605.972,118.5629,610.9,113.6349,608.1225,119.907,615.716" style="stroke: #000000; stroke-width: 0.5;"/><!--MD5=[e47009d06af9b95fea47bf8ec49674af]
+link createDb to _ItemDatabaseCosmosDB--><path d="M339.15,395.391 C351.561,407.026 371.074,425.319 385.994,439.307 " fill="none" id="createDb-&gt;_ItemDatabaseCosmosDB" style="stroke: #000000; stroke-width: 0.5; stroke-dasharray: 7.0,7.0;"/><polygon fill="#000000" points="389.681,442.764,385.8483,433.6915,386.0323,439.3453,380.3785,439.5293,389.681,442.764" style="stroke: #000000; stroke-width: 0.5;"/><!--MD5=[a9d8a4e054db1c5e4316cc572cf4808f]
+link createDb to _ItemDatabaseInMemory--><path d="M311.964,395.391 C296.475,407.125 272.049,425.63 253.527,439.662 " fill="none" id="createDb-&gt;_ItemDatabaseInMemory" style="stroke: #000000; stroke-width: 0.5; stroke-dasharray: 7.0,7.0;"/><polygon fill="#000000" points="249.432,442.764,259.0216,440.519,253.4179,439.7453,254.1916,434.1416,249.432,442.764" style="stroke: #000000; stroke-width: 0.5;"/><!--MD5=[192fd8f94b35fe2e4800c2f5e4a1358e]
+link Item to _itemSchema--><path d="M617.759,468.092 C602.598,475.37 581.508,488.285 572,507 C559.922,530.774 561.988,542.284 572,567 C579.326,585.0842 594.364,600.916 607.911,612.4265 " fill="none" id="Item-&gt;_itemSchema" style="stroke: #000000; stroke-width: 0.5; stroke-dasharray: 7.0,7.0;"/><polygon fill="#000000" points="612.057,615.8577,607.6747,607.0375,608.2054,612.6694,602.5735,613.2001,612.057,615.8577" style="stroke: #000000; stroke-width: 0.5;"/><!--MD5=[ca76c06238673fbf3f29c7f9c0e41d6e]
+link Item to itemValidator--><path d="M635,473.147 C635,482.525 635,495.64 635,506.202 " fill="none" id="Item-&gt;itemValidator" style="stroke: #000000; stroke-width: 0.5; stroke-dasharray: 7.0,7.0;"/><polygon fill="#000000" points="635,511.459,639,502.459,635,506.459,631,502.459,635,511.459" style="stroke: #000000; stroke-width: 0.5;"/><!--MD5=[e53f80d6eec96691edcfa1523f8d0d87]
+link _ItemDatabaseCosmosDB to cleanCosmosDbItems--><path d="M407,477.224 C407,484.57 407,493.379 407,501.362 " fill="none" id="_ItemDatabaseCosmosDB-&gt;cleanCosmosDbItems" style="stroke: #000000; stroke-width: 0.5; stroke-dasharray: 7.0,7.0;"/><polygon fill="#000000" points="407,506.728,411,497.728,407,501.728,403,497.728,407,506.728" style="stroke: #000000; stroke-width: 0.5;"/><!--MD5=[a7665d0466f1c36f7a9954f73c0a276a]
+link _ItemDatabaseCosmosDB to _ItemDatabase--><path d="M365.701,477.061 C342.947,485.91 314.638,496.918 291.157,506.05 " fill="none" id="_ItemDatabaseCosmosDB-&gt;_ItemDatabase" style="stroke: #000000; stroke-width: 0.5; stroke-dasharray: 7.0,7.0;"/><polygon fill="#000000" points="286.223,507.969,296.0609,508.4338,290.8828,506.1562,293.1604,500.9781,286.223,507.969" style="stroke: #000000; stroke-width: 0.5;"/><!--MD5=[fdbacad1d4ff97367cd303d0ccf8151d]
+link _ItemDatabaseInMemory to _ItemDatabase--><path d="M232.378,477.224 C234.464,484.953 236.986,494.301 239.226,502.602 " fill="none" id="_ItemDatabaseInMemory-&gt;_ItemDatabase" style="stroke: #000000; stroke-width: 0.5; stroke-dasharray: 7.0,7.0;"/><polygon fill="#000000" points="240.578,507.612,242.0946,497.8806,239.2751,502.7847,234.371,499.9652,240.578,507.612" style="stroke: #000000; stroke-width: 0.5;"/><!--MD5=[75a80f08ac2c4e70c03190cc62d24824]
+link itemValidator to _itemSchema--><path d="M635,538.576 C635,556.372 635,589.1372 635,610.7489 " fill="none" id="itemValidator-&gt;_itemSchema" style="stroke: #000000; stroke-width: 0.5; stroke-dasharray: 7.0,7.0;"/><polygon fill="#000000" points="635,615.9872,639,606.9872,635,610.9872,631,606.9872,635,615.9872" style="stroke: #000000; stroke-width: 0.5;"/><!--MD5=[59237ea0f95826e8347d2a103c9c36ec]
+link main to createDb--><path d="M276.216,191.091 C285.408,225.645 311.813,324.906 322.464,364.949 " fill="none" id="main-&gt;createDb" style="stroke: #000000; stroke-width: 0.5;"/><polygon fill="#000000" points="323.801,369.973,325.352,360.247,322.5152,365.1412,317.621,362.3044,323.801,369.973" style="stroke: #000000; stroke-width: 0.5;"/><!--MD5=[154971a0ee43406a988bb006c9376196]
+link usecases/create to Item--><path d="M670.94,294.507 C663.883,326.804 646.487,406.427 638.78,441.701 " fill="none" id="usecases/create-&gt;Item" style="stroke: #000000; stroke-width: 0.5;"/><polygon fill="#000000" points="637.629,446.967,643.4579,439.0282,638.6962,442.0822,635.6422,437.3206,637.629,446.967" style="stroke: #000000; stroke-width: 0.5;"/><!--MD5=[8ed3d3b1cfa72f5b40453ed23b2aaeaf]
+link usecases/create to _itemSchema--><path d="M679.4,294.58 C694.941,337.385 736.233,469.026 697,567 C689.802,584.9746 675.003,600.8031 661.668,612.3393 " fill="none" id="usecases/create-&gt;_itemSchema" style="stroke: #000000; stroke-width: 0.5;"/><polygon fill="#000000" points="657.587,615.7793,667.0463,613.0367,661.4098,612.5566,661.8899,606.9201,657.587,615.7793" style="stroke: #000000; stroke-width: 0.5;"/><script type="text/plantuml"><![CDATA[MD5=[7278a3688ce8ffe3755e999506e46cae]
+@startuml
+
+scale max 1920 width
+top to bottom direction
+
+skinparam nodesep 15
+skinparam ranksep 30
+skinparam monochrome true
+skinparam shadowing false
+skinparam defaultFontName Tahoma
+skinparam defaultFontSize 12
+skinparam roundCorner 6
+skinparam dpi 150
+skinparam arrowColor black
+skinparam arrowThickness 0.5
+skinparam packageTitleAlignment left
+
+skinparam usecase {
+  borderThickness 0.5
+}
+
+skinparam rectangle {
+  borderThickness 0.5
+}
+
+skinparam component {
+  borderThickness 1
+}
+
+
+package "Controllers" {
+  (<b>controllers/create</b>)
+  (<b>controllers/delete</b>)
+  (<b>controllers/read</b>)
+  (<b>controllers/update</b>)
+}
+
+package "Main" {
+  (main)
+}
+
+package "Entities" {
+  (Item)
+  rectangle "itemSchema" as _itemSchema
+  (itemValidator)
+}
+
+package "Frameworks" {
+  (cleanCosmosDbItems)
+  (createDb)
+  rectangle "ItemDatabase" as _ItemDatabase
+  rectangle "ItemDatabaseCosmosDB" as _ItemDatabaseCosmosDB
+  rectangle "ItemDatabaseInMemory" as _ItemDatabaseInMemory
+  (requestValidator)
+}
+
+package "Use cases" {
+  (usecases/create)
+  (usecases/delete)
+  (usecases/read)
+  (usecases/update)
+}
+
+package "Dependencies" {
+  [@azure]
+}
+
+(<b>controllers/create</b>) --[thickness=1]> (main)
+(<b>controllers/create</b>) ----[thickness=1]> (requestValidator)
+(<b>controllers/create</b>) ---[thickness=1]> (usecases/create)
+(<b>controllers/delete</b>) --[thickness=1]> (main)
+(<b>controllers/delete</b>) ----[thickness=1]> (requestValidator)
+(<b>controllers/delete</b>) ---[thickness=1]> (usecases/delete)
+(<b>controllers/read</b>) --[thickness=1]> (main)
+(<b>controllers/read</b>) ----[thickness=1]> (requestValidator)
+(<b>controllers/read</b>) ---[thickness=1]> (usecases/read)
+(<b>controllers/update</b>) --[thickness=1]> (main)
+(<b>controllers/update</b>) ----[thickness=1]> (requestValidator)
+(<b>controllers/update</b>) ---[thickness=1]> (usecases/update)
+(createDb) ----> [@azure]
+(createDb) ..> _ItemDatabaseCosmosDB
+(createDb) ..> _ItemDatabaseInMemory
+(Item) ..> _itemSchema
+(Item) ..> (itemValidator)
+_ItemDatabaseCosmosDB ..> (cleanCosmosDbItems)
+_ItemDatabaseCosmosDB ..> _ItemDatabase
+_ItemDatabaseInMemory ..> _ItemDatabase
+(itemValidator) ..> _itemSchema
+(main) --> (createDb)
+(usecases/create) ---> (Item)
+(usecases/create) ---> _itemSchema
+
+@enduml
+
+
+' View and edit on https://arkit.pro
+]]></script></g></svg>

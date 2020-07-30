@@ -1,0 +1,62 @@
+{
+  "$schema": "https://arkit.js.org/schema.json",
+  "excludePatterns": ["__tests__/"],
+  "components": [
+    {
+      "type": "Controller",
+      "patterns": ["src/app/controllers/*.ts"]
+    },
+    {
+      "type": "Main",
+      "patterns": ["src/main.ts"]
+    },
+    {
+      "type": "Entity",
+      "patterns": ["src/entities/**/*.ts"]
+    },
+    {
+      "type": "Framework",
+      "patterns": ["src/frameworks/**/*.ts"]
+    },
+    {
+      "type": "Usecase",
+      "patterns": ["src/usecases/**/*.ts"]
+    },
+    {
+      "type": "Dependency",
+      "patterns": ["node_modules/*"]
+    }
+  ],
+  "output": [
+    {
+      "path": "arkit.svg",
+      "groups": [
+        {
+          "first": true,
+          "type": "Controllers",
+          "components": ["Controller"]
+        },
+        {
+          "type": "Main",
+          "components": ["Main"]
+        },
+        {
+          "type": "Entities",
+          "components": ["Entity"]
+        },
+        {
+          "type": "Frameworks",
+          "components": ["Framework"]
+        },
+        {
+          "type": "Use cases",
+          "components": ["Usecase"]
+        },
+        {
+          "type": "Dependencies",
+          "components": ["Dependency"]
+        }
+      ]
+    }
+  ]
+}

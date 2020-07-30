@@ -9,5 +9,13 @@
   "env": {
     "node": true,
     "es6": true
-  }
+  },
+  "overrides": [
+    {
+      "files": ["**/*.test.mjs", "**/*.test.js", "**/*.test.ts"],
+      "env": {
+        "jest": true
+      }
+    }
+  ]
 }

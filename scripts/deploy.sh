@@ -44,7 +44,7 @@ az cosmosdb sql container create \
   --throughput $THROUGHPUT
 
 # List connections strings and endpoints
-# Put those values in "src/interfaces/Database/config.ts"
+# Put those values in "src/config.ts"
 az cosmosdb keys list \
   --name $COSMOSDB_ACCOUNT_NAME \
   --resource-group $RG_NAME \

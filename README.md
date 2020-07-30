@@ -29,6 +29,10 @@ The code is somewhat modeled after an official Microsoft example at [https://doc
 - **`src/infra`**: Anything that is entirely internal to the application (error messages)
 - **`src/interfaces/Database`**: External interfaces that bridge the outside with our application (in our case, the ItemDatabase class)
 
+### Arkit code structure map
+
+![Arkit code structure map](arkit.svg)
+
 ## Install
 
 Run `npm install` or `yarn add`.
@@ -96,11 +100,6 @@ You can create a record/item with some simple string fields (`category`, `name`,
   "category": "something",
   "name": "nice name here",
   "description": "what it is",
-  "_rid": "rThBAJfch8tDAAAAAAAAAA==",
-  "_self": "dbs/rThBAA==/colls/rThBAJfch8s=/docs/rThBAJfch8tDAAAAAAAAAA==/",
-  "_etag": "\"0f01e905-0000-0d00-0000-5f0d6b000000\"",
-  "_attachments": "attachments/",
-  "_ts": 1594714880
 }
 ```
 
@@ -124,22 +123,12 @@ You can read a single, or all, records.
       "category": "asdf",
       "name": "that-guy",
       "description": "something",
-      "_rid": "rThBAJfch8s0AAAAAAAAAA==",
-      "_self": "dbs/rThBAA==/colls/rThBAJfch8s=/docs/rThBAJfch8s0AAAAAAAAAA==/",
-      "_etag": "\"1001b55b-0000-0d00-0000-5f0d7a980000\"",
-      "_attachments": "attachments/",
-      "_ts": 1594718872
     },
     {
       "id": "5667",
       "category": "something",
       "name": "nice name here",
       "description": "what it is",
-      "_rid": "rThBAJfch8s9AAAAAAAAAA==",
-      "_self": "dbs/rThBAA==/colls/rThBAJfch8s=/docs/rThBAJfch8s9AAAAAAAAAA==/",
-      "_etag": "\"0e0188f7-0000-0d00-0000-5f0d6a670000\"",
-      "_attachments": "attachments/",
-      "_ts": 1594714727
     }
   ]
 }
@@ -161,11 +150,6 @@ You can read a single, or all, records.
       "category": "something",
       "name": "nice name here",
       "description": "what it is",
-      "_rid": "rThBAJfch8s9AAAAAAAAAA==",
-      "_self": "dbs/rThBAA==/colls/rThBAJfch8s=/docs/rThBAJfch8s9AAAAAAAAAA==/",
-      "_etag": "\"0e0188f7-0000-0d00-0000-5f0d6a670000\"",
-      "_attachments": "attachments/",
-      "_ts": 1594714727
     }
   ]
 }
@@ -190,12 +174,6 @@ You can update an existing record. Cosmos DB does not support partial updates. T
     "category": "asdf",
     "name": "that-guy",
     "description": "something",
-    "isComplete": false,
-    "_rid": "rThBAJfch8s0AAAAAAAAAA==",
-    "_self": "dbs/rThBAA==/colls/rThBAJfch8s=/docs/rThBAJfch8s0AAAAAAAAAA==/",
-    "_etag": "\"10018edd-0000-0d00-0000-5f0d80610000\"",
-    "_attachments": "attachments/",
-    "_ts": 1594720353
   }
 }
 ```
@@ -220,9 +198,11 @@ You can delete a single record by passing in the ID of the record that should be
 
 ## Testing
 
-I haven't added any specific testing tools here, beyond the local dev support and the below "hack":
+Jest is used for unit testing and some kind of basic system testing for the controllers and use cases.
 
-There is the possibility to test/troubleshoot individual functions by running `npm run run:create` (or Yarn, and whatever the function name might be). I've used that a couple of times to check output without deploying.
+Because Typescript support is not fully 100% I suggest you first build your TS files into JS files and then test those. Therefore, you'll see in the tests that they point to the `dist` folder and their respective files. This is already handled by `npm test` or `yarn test` commands and the current setup, but just so you know.
+
+The tests that exist are for basic coverage so expect that you might need to harden them should you want to use this repo in production.
 
 ## Deploying
 
