@@ -23,11 +23,11 @@ The code is somewhat modeled after an official Microsoft example at [https://doc
 - **`scripts/deploy.sh`**: Deployment shell script
 - **`scripts/teardown.sh`**: Script to remove your resource group and anything in it
 - **`arm/`**: Azure ARM templates to deploy some of the resources
-- **`src/app/[FUNCTION NAME]`**: Functions, methods, classes, what have you. Should be regular JS/TS and dissociated from the Azure function handler (so they can remain free-standing and testable)
-- **`src/domain/Item`**: Where we store domain objects. In our context it's just some interfaces for the "Item" construct
-- **`src/handlers`**: The base-level handlers that you will supply inside of `serverless.yml`; these should point to code in the function-named subfolders. These do some very basic validation as well.
-- **`src/infra`**: Anything that is entirely internal to the application (error messages)
-- **`src/interfaces/Database`**: External interfaces that bridge the outside with our application (in our case, the ItemDatabase class)
+- **`src/app/contracts`**: Contracts (interfaces) for various things
+- **`src/app/controllers`**: The primary entrypoint for the serverless handlers
+- **`src/frameworks`**: Helpers and any "details" like databases and request validators, anything that's not application-specific
+- **`src/usecases`**: Where the actual business logic should take place — in this project it's nothing more than sending data down to the right database functionality
+- **`src/entities/Item`**: Where we store domain objects (entities). In our case it's a factory to create Items and its schema
 
 ### Arkit code structure map
 
