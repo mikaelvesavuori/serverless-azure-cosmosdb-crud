@@ -117,18 +117,18 @@ You can read a single, or all, records.
 
 ```
 {
-	{
-		"id": "8222",
-		"category": "asdf",
-		"name": "that-guy",
-		"description": "something",
-	},
-	{
-		"id": "5667",
-		"category": "something",
-		"name": "nice name here",
-		"description": "what it is",
-	}
+  {
+    "id": "8222",
+    "category": "asdf",
+    "name": "that-guy",
+    "description": "something",
+  },
+  {
+    "id": "5667",
+    "category": "something",
+    "name": "nice name here",
+    "description": "what it is",
+  }
 }
 ```
 
