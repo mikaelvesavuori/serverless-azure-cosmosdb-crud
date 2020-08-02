@@ -1,3 +1,5 @@
+[![Maintainability](https://api.codeclimate.com/v1/badges/afb2c53bb4a54fc6eb58/maintainability)](https://codeclimate.com/github/mikaelvesavuori/serverless-azure-cosmosdb-crud/maintainability)
+
 # Serverless CRUD: Azure Cosmos DB (SQL) through Azure Functions
 
 This is a starter package for doing serverless CRUD operations on Azure. See it as a good "starting point plus" (Typescript, Webpack, Serverless Framework, Clean Architecture/DDD-style structure) if you are not satisfied with the more basic examples on the web. Since Node is a bit second-rate in the Microsoft world, finding solid, bigger examples can be a tad tough. Hopefully you get going fast with this one!
