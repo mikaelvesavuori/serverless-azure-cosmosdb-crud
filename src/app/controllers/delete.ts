@@ -16,17 +16,10 @@ import { ItemDelete } from '../contracts/Item/Item';
  * @param req - Incoming HTTP request
  */
 export async function deleteController(context: Context, req: HttpRequest): Promise<any> {
-  return requestValidator(
-    {
-      method: req.method,
-      body: req.body,
-      query: req.query
-    },
-    {
-      requiredMethod: 'DELETE',
-      requiredArgs: ['id']
-    }
-  )
+  return requestValidator(req, {
+    requiredMethod: 'DELETE',
+    requiredArgs: ['id']
+  })
     .then(async (requestBody: RequestValidatorResult) => await useCaseDelete(requestBody as ItemDelete, database as ItemDatabase))
     .then((response: Promise<any>) => {
       return {

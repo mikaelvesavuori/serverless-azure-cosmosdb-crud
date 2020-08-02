@@ -1,10 +1,6 @@
-import { HttpMethod } from '@azure/functions';
+import { HttpMethod, HttpRequest } from '@azure/functions';
 
-export interface RequestValidatorRequest {
-  method: 'POST' | 'GET' | 'PATCH' | 'DELETE' | HttpMethod | null;
-  body: any;
-  query?: any;
-}
+export type RequestValidatorRequest = HttpRequest;
 
 export interface RequestValidatorValidator {
   requiredMethod: 'POST' | 'GET' | 'PATCH' | 'DELETE' | HttpMethod;

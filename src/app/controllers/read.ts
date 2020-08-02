@@ -16,17 +16,10 @@ import { ItemRead } from '../contracts/Item/Item';
  * @param req - Incoming HTTP request
  */
 export async function readController(context: Context, req: HttpRequest): Promise<any> {
-  return requestValidator(
-    {
-      method: req.method,
-      body: req.body,
-      query: req.query
-    },
-    {
-      requiredMethod: 'GET',
-      requiredArgs: []
-    }
-  )
+  return requestValidator(req, {
+    requiredMethod: 'GET',
+    requiredArgs: []
+  })
     .then(async (requestBody: RequestValidatorResult) => await useCaseRead(requestBody as ItemRead, database as ItemDatabase))
     .then((response: Promise<any>) => {
       return {

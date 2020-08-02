@@ -2,7 +2,7 @@ import { updateController } from '../../../dist/src/app/controllers/update.js';
 
 describe('Failure cases', () => {
   test('It should reject an error if started without context or request objects', async () => {
-    await expect(updateController()).rejects.toThrow();
+    await expect(updateController()).resolves.toEqual(expect.objectContaining({ status: 400 }));
   });
 
   test('It should fail if not provided all required body arguments', async () => {
@@ -24,7 +24,9 @@ describe('Success cases', () => {
   test('It should return updated object if passed valid input data', async () => {
     await expect(
       updateController(
-        {},
+        {
+          body: ''
+        },
         {
           method: 'PATCH',
           query: {

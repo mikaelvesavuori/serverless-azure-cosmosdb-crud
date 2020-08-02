@@ -2,7 +2,7 @@ import { readController } from '../../../dist/src/app/controllers/read.js';
 
 describe('Failure cases', () => {
   test('It should reject if started without context or request objects', async () => {
-    await expect(readController()).rejects.toThrow();
+    await expect(readController()).resolves.toEqual(expect.objectContaining({ status: 400 }));
   });
 
   test('It should reject if passed in empty context or request objects', async () => {

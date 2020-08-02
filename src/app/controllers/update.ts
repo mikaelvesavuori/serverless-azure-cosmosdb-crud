@@ -16,17 +16,10 @@ import { ItemUpdate } from '../contracts/Item/Item';
  * @param req - Incoming HTTP request
  */
 export async function updateController(context: Context, req: HttpRequest): Promise<any> {
-  return requestValidator(
-    {
-      method: req.method,
-      body: req.body,
-      query: req.query
-    },
-    {
-      requiredMethod: 'PATCH',
-      requiredArgs: ['id']
-    }
-  )
+  return requestValidator(req, {
+    requiredMethod: 'PATCH',
+    requiredArgs: ['id']
+  })
     .then(async (requestBody: RequestValidatorResult) => await useCaseUpdate(requestBody as ItemUpdate, database as ItemDatabase))
     .then((response: Promise<any>) => {
       return {

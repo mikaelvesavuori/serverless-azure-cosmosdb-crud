@@ -9,9 +9,6 @@ import { ItemDatabase } from '../app/contracts/ItemDatabase/ItemDatabase';
  * @param database - Database type to use
  */
 export const useCaseCreate = async (item: ItemCreate, database: ItemDatabase): Promise<any> => {
-  if (!item) throw new Error('No item provided!');
-  if (!database) throw new Error('No database provided!');
-
   return makeItem(item)
     .then(async (item: Item) => await database.create(item))
     .catch((error) => {

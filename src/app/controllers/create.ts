@@ -18,16 +18,10 @@ import { ItemCreate } from '../contracts/Item/Item';
 export async function createController(context: Context, req: HttpRequest): Promise<any> {
   if (!req) throw new Error('No request object received!');
 
-  return requestValidator(
-    {
-      method: req.method,
-      body: req.body
-    },
-    {
-      requiredMethod: 'POST',
-      requiredArgs: ['category', 'name', 'description']
-    }
-  )
+  return requestValidator(req, {
+    requiredMethod: 'POST',
+    requiredArgs: ['category', 'name', 'description']
+  })
     .then(async (requestBody: RequestValidatorResult) => await useCaseCreate(requestBody as ItemCreate, database as ItemDatabase))
     .then((response: Promise<any>) => {
       return {
@@ -41,3 +35,5 @@ export async function createController(context: Context, req: HttpRequest): Prom
       };
     });
 }
+
+const asdf = () => null;

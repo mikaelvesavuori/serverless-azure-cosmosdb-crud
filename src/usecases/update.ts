@@ -7,8 +7,5 @@ import { ItemDatabase } from '../app/contracts/ItemDatabase/ItemDatabase';
  * @param database - Database type to use
  */
 export const useCaseUpdate = async (item: ItemUpdate, database: ItemDatabase): Promise<any> => {
-  if (!item) throw new Error('No item provided!');
-  if (!database) throw new Error('No database provided!');
-
   return await database.update(item);
 };

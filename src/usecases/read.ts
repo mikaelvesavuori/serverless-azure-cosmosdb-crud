@@ -7,8 +7,5 @@ import { ItemDatabase } from '../app/contracts/ItemDatabase/ItemDatabase';
  * @param database - Database type to use
  */
 export const useCaseRead = async (id: ItemRead, database: ItemDatabase): Promise<any> => {
-  if (!id) throw new Error('No item ID provided!');
-  if (!database) throw new Error('No database provided!');
-
   return await database.read(id);
 };
