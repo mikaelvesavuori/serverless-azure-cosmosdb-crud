@@ -27,10 +27,7 @@ export async function deleteController(context: Context, req: HttpRequest): Prom
       requiredArgs: ['id']
     }
   )
-    .then(
-      async (requestBody: RequestValidatorResult) =>
-        await useCaseDelete(requestBody as ItemDelete, database as ItemDatabase)
-    )
+    .then(async (requestBody: RequestValidatorResult) => await useCaseDelete(requestBody as ItemDelete, database as ItemDatabase))
     .then((response: Promise<any>) => {
       return {
         body: response

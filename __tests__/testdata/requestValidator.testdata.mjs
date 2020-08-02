@@ -1,6 +1,6 @@
 export const ValidRequestData = {
   method: 'POST',
-  body: { category: 'asdf' }
+  body: { category: 'asdf', id: 'j34hs7' }
 };
 
 export const InvalidRequestData = {
@@ -11,6 +11,11 @@ export const InvalidRequestData = {
 export const ValidValidatorData = {
   requiredMethod: 'POST',
   requiredArgs: ['category']
+};
+
+export const NoReqArgsValidatorData = {
+  requiredMethod: 'POST',
+  requiredArgs: []
 };
 
 export const ValidReqValResponse = { category: 'asdf' };

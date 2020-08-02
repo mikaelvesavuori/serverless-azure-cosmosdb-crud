@@ -1,10 +1,6 @@
 import { createDb } from '../../../../dist/src/frameworks/database/createDb.js';
 
-import {
-  ValidDatabaseDataCosmosDB,
-  ValidDatabaseDataInMemory,
-  InvalidDatabase
-} from '../../../testdata/createDb.testdata.mjs';
+import { ValidDatabaseDataCosmosDB, ValidDatabaseDataInMemory, InvalidDatabase } from '../../../testdata/createDb.testdata.mjs';
 
 describe('Failure cases', () => {
   test('It should throw if no database is provided', () => {

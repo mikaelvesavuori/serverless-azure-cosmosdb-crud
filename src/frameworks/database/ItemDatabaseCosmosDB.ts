@@ -1,11 +1,6 @@
 import { ItemDatabase } from './ItemDatabase';
 import { ItemCreate, ItemRead, ItemUpdate, ItemDelete } from '../../app/contracts/Item/Item';
-import {
-  ItemCreateResponse,
-  ItemReadResponse,
-  ItemUpdateResponse,
-  ItemDeleteResponse
-} from '../../app/contracts/ItemDatabase/ItemDatabaseResponse';
+import { ItemCreateResponse, ItemReadResponse, ItemUpdateResponse, ItemDeleteResponse } from '../../app/contracts/ItemDatabase/ItemDatabaseResponse';
 
 import { cleanCosmosDbItems } from './cleanCosmosDbItems';
 

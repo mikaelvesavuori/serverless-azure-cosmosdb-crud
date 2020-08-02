@@ -27,10 +27,7 @@ export async function readController(context: Context, req: HttpRequest): Promis
       requiredArgs: []
     }
   )
-    .then(
-      async (requestBody: RequestValidatorResult) =>
-        await useCaseRead(requestBody as ItemRead, database as ItemDatabase)
-    )
+    .then(async (requestBody: RequestValidatorResult) => await useCaseRead(requestBody as ItemRead, database as ItemDatabase))
     .then((response: Promise<any>) => {
       return {
         body: response

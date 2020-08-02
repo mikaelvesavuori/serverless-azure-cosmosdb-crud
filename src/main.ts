@@ -10,7 +10,7 @@ let database: any;
 
 function main(env: string) {
   const databaseName = (() => {
-    console.log('Dev Environment?', env);
+    //console.log('Dev Environment?', env);
     process.env['AZ_CRUD_DEV'] = env;
 
     const db = (() => {

@@ -27,10 +27,7 @@ export async function updateController(context: Context, req: HttpRequest): Prom
       requiredArgs: ['id']
     }
   )
-    .then(
-      async (requestBody: RequestValidatorResult) =>
-        await useCaseUpdate(requestBody as ItemUpdate, database as ItemDatabase)
-    )
+    .then(async (requestBody: RequestValidatorResult) => await useCaseUpdate(requestBody as ItemUpdate, database as ItemDatabase))
     .then((response: Promise<any>) => {
       return {
         body: response

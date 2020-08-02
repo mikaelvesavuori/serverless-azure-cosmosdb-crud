@@ -17,3 +17,9 @@ export interface RequestValidatorResult {
   name?: string;
   description?: string;
 }
+
+export type RequestValidity = {
+  rejected: boolean;
+  message: string;
+  args: any[];
+};

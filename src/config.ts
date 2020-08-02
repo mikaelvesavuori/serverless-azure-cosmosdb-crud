@@ -13,3 +13,5 @@ export const CosmosDBConfig = {
   containerId: 'TestContainer',
   partitionKey: { kind: 'Hash', paths: ['/test/items'] }
 };
+
+export const allowedFields = ['category', 'name', 'description', 'id'];

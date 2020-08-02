@@ -1,10 +1,5 @@
 import { ItemCreate, ItemRead, ItemUpdate, ItemDelete } from '../../app/contracts/Item/Item';
-import {
-  ItemCreateResponse,
-  ItemReadResponse,
-  ItemUpdateResponse,
-  ItemDeleteResponse
-} from '../../app/contracts/ItemDatabase/ItemDatabaseResponse';
+import { ItemCreateResponse, ItemReadResponse, ItemUpdateResponse, ItemDeleteResponse } from '../../app/contracts/ItemDatabase/ItemDatabaseResponse';
 
 /**
  * @description Item database, abstract main implementation

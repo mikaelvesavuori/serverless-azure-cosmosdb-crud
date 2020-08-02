@@ -21,7 +21,7 @@ describe('Failure cases', () => {
 });
 
 describe('Success cases', () => {
-  test('It should return successfully if passed valid input data', async () => {
+  test('It should return updated object if passed valid input data', async () => {
     await expect(
       updateController(
         {},

@@ -15,5 +15,9 @@
     "removeComments": true,
     "strictFunctionTypes": true,
     "strict": true
+    // Recommendations from "Using Babel with TypeScript" in official docs
+    //"declaration": true,
+    //"emitDeclarationOnly": true,
+    //"isolatedModules": true
   }
 }

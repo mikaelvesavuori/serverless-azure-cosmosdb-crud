@@ -28,10 +28,7 @@ export async function createController(context: Context, req: HttpRequest): Prom
       requiredArgs: ['category', 'name', 'description']
     }
   )
-    .then(
-      async (requestBody: RequestValidatorResult) =>
-        await useCaseCreate(requestBody as ItemCreate, database as ItemDatabase)
-    )
+    .then(async (requestBody: RequestValidatorResult) => await useCaseCreate(requestBody as ItemCreate, database as ItemDatabase))
     .then((response: Promise<any>) => {
       return {
         body: response
