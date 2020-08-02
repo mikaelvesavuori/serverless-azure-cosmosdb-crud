@@ -25,7 +25,8 @@ describe('Success cases', () => {
     await expect(
       updateController(
         {
-          body: ''
+          body: '',
+          query: ''
         },
         {
           method: 'PATCH',

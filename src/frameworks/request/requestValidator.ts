@@ -17,6 +17,7 @@ export function requestValidator(request: RequestValidatorRequest, validator: Re
     const args: any = request.method.toUpperCase() === 'POST' ? request.body : request.query;
 
     const validity = checkValidity(request, validator, args);
+    console.log(validity);
     const { rejected, message } = validity;
     if (rejected) reject(message);
 
