@@ -12,24 +12,18 @@ export const checkValidity = (request: RequestValidatorRequest, validator: Reque
 
   // Check if arguments are required, else send back whatever came in
   if (validator.requiredArgs.length === 0) return validity;
-
   // Ensure we have a body for any POST requests
-  if (validator.requiredMethod.toUpperCase() === 'POST' && !request.body) {
-    validity.rejected = true;
-    validity.message = 'Missing body for POST request!';
+  else if (validator.requiredMethod.toUpperCase() === 'POST' && !request.body) {
+    validity.message = `Missing body for POST request!`;
   }
-
   // Check for correct request method
-  if ((request.method && request.method.toUpperCase()) !== validator.requiredMethod.toUpperCase()) {
-    validity.rejected = true;
+  else if ((request.method && request.method.toUpperCase()) !== validator.requiredMethod.toUpperCase()) {
     validity.message = `Incorrect method used. Must be "${validator.requiredMethod}"!`;
   }
-
   // Ensure we have all the right arguments
-  if (!validator.requiredArgs.every((arg) => Object.keys(args).includes(arg))) {
-    validity.rejected = true;
+  else if (!validator.requiredArgs.every((arg) => Object.keys(args).includes(arg))) {
     validity.message = `All required body arguments were not present. Must include fields "${validator.requiredArgs}"!`;
   }
-
+  validity.rejected = true;
   return validity;
 };
