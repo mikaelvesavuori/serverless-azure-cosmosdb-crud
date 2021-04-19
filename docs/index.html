@@ -1,0 +1,414 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>serverless-azure-cosmosdb-crud</title>
+	<meta name="description" content="Documentation for serverless-azure-cosmosdb-crud">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+	<script async src="assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">serverless-azure-cosmosdb-crud</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<h1>serverless-azure-cosmosdb-crud</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<p><a href="https://codeclimate.com/github/mikaelvesavuori/serverless-azure-cosmosdb-crud/maintainability"><img src="https://api.codeclimate.com/v1/badges/afb2c53bb4a54fc6eb58/maintainability" alt="Maintainability"></a></p>
+				<a href="#serverless-crud-azure-cosmos-db-sql-through-azure-functions" id="serverless-crud-azure-cosmos-db-sql-through-azure-functions" style="color: inherit; text-decoration: none;">
+					<h1>Serverless CRUD: Azure Cosmos DB (SQL) through Azure Functions</h1>
+				</a>
+				<p>This is a starter package for doing serverless CRUD operations on Azure. See it as a good &quot;starting point plus&quot; (Typescript, Webpack, Serverless Framework, Clean Architecture/DDD-style structure) if you are not satisfied with the more basic examples on the web. Since Node is a bit second-rate in the Microsoft world, finding solid, bigger examples can be a tad tough. Hopefully you get going fast with this one!</p>
+				<p>The code is somewhat modeled after an official Microsoft example at <a href="https://docs.microsoft.com/en-us/azure/cosmos-db/sql-api-nodejs-get-started">https://docs.microsoft.com/en-us/azure/cosmos-db/sql-api-nodejs-get-started</a>.</p>
+				<p><strong>Stack</strong></p>
+				<ul>
+					<li><a href="https://www.serverless.com">Serverless Framework</a></li>
+					<li><a href="https://azure.microsoft.com/en-us/services/functions/">Azure Functions</a> + <a href="https://azure.microsoft.com/en-us/services/api-management/">API Management</a> + <a href="https://azure.microsoft.com/en-us/services/cosmos-db/">Azure Cosmos DB (SQL)</a> + <a href="https://azure.microsoft.com/en-us/services/storage/">Azure Storage</a> (for storing the functions)</li>
+					<li><a href="https://webpack.js.org">Webpack</a> for bundling and optimizing</li>
+					<li><a href="https://babeljs.io">Babel</a> for transpiling files</li>
+					<li><a href="https://www.typescriptlang.org">Typescript</a> so we can write better code</li>
+				</ul>
+				<p><strong>Thinking of using this in production?</strong></p>
+				<ul>
+					<li>Pro tip: Absolutely use <code>sls offline</code> to verify and test stuff locally. Azure is just so much harder to use when you want to view logs compared to GCP and AWS, so you will be saving a lot of time doing the local dev stuff as long as you can.</li>
+					<li>If you will use this in production, you should definitely find another pattern for storing and setting your sensitive keys (like connection strings). Look at environment variables, deployment variables, maybe some Azure key/secret management solution, or something along those lines.</li>
+					<li>Also, for production, you might want to look at patterns to save your Cosmos database from being overrun with requests. Look at maybe a messaging or event solution to go in between the API and the database. While Azure Functions can scale quickly, SQL cannot.</li>
+				</ul>
+				<a href="#structure" id="structure" style="color: inherit; text-decoration: none;">
+					<h2>Structure</h2>
+				</a>
+				<ul>
+					<li><strong><code>scripts/deploy.sh</code></strong>: Deployment shell script</li>
+					<li><strong><code>scripts/teardown.sh</code></strong>: Script to remove your resource group and anything in it</li>
+					<li><strong><code>arm/</code></strong>: Azure ARM templates to deploy some of the resources</li>
+					<li><strong><code>src/app/contracts</code></strong>: Contracts (interfaces) for various things</li>
+					<li><strong><code>src/app/controllers</code></strong>: The primary entrypoint for the serverless handlers</li>
+					<li><strong><code>src/frameworks</code></strong>: Helpers and any &quot;details&quot; like databases and request validators, anything that&#39;s not application-specific</li>
+					<li><strong><code>src/usecases</code></strong>: Where the actual business logic should take place — in this project it&#39;s nothing more than sending data down to the right database functionality</li>
+					<li><strong><code>src/entities/Item</code></strong>: Where we store domain objects (entities). In our case it&#39;s a factory to create Items and its schema</li>
+				</ul>
+				<a href="#arkit-code-structure-map" id="arkit-code-structure-map" style="color: inherit; text-decoration: none;">
+					<h3>Arkit code structure map</h3>
+				</a>
+				<p><img src="arkit.svg" alt="Arkit code structure map"></p>
+				<a href="#install" id="install" style="color: inherit; text-decoration: none;">
+					<h2>Install</h2>
+				</a>
+				<p>Run <code>npm install</code> or <code>yarn add</code>.</p>
+				<a href="#configuration" id="configuration" style="color: inherit; text-decoration: none;">
+					<h2>Configuration</h2>
+				</a>
+				<p>Database configuration should be done in <code>src/infra/Config/CosmosDBConfig.mjs</code> for connection strings and such, and in <code>serverless.yml</code> for anything that has to do with the actual deployment.</p>
+				<p>You can get the required connection string (primary key works fine) and endpoint URI either inside of the visual Azure console or by running the bottom-most command in <code>./scripts/deploy.sh</code>.</p>
+				<a href="#log-in-to-azure" id="log-in-to-azure" style="color: inherit; text-decoration: none;">
+					<h2>Log in to Azure</h2>
+				</a>
+				<ol>
+					<li><code>az account clear</code></li>
+					<li><code>az login</code></li>
+				</ol>
+				<p>Then set credentials as per instructions at <a href="https://github.com/serverless/serverless-azure-functions#advanced-authentication">https://github.com/serverless/serverless-azure-functions#advanced-authentication</a>.</p>
+				<a href="#development" id="development" style="color: inherit; text-decoration: none;">
+					<h2>Development</h2>
+				</a>
+				<p><strong>You will need to deploy a database before doing any development! Read more in the &quot;Deploying&quot; section below.</strong></p>
+				<p>Run <code>sls offline</code>. You may be asked if you want to accept incoming requests for <code>func</code>, accept those. After a bit of building files and doing its magic, you get a prompt looking like:</p>
+				<pre><code><span style="color: #001080">Http</span><span style="color: #000000"> Functions:</span>
+
+<span style="color: #000000">update: [</span><span style="color: #0070C1">PATCH</span><span style="color: #000000">] http:</span><span style="color: #008000">//localhost:7071/api/update</span>
+<span style="color: #000000">delete: [</span><span style="color: #0070C1">DELETE</span><span style="color: #000000">] http:</span><span style="color: #008000">//localhost:7071/api/delete</span>
+<span style="color: #000000">read: [</span><span style="color: #0070C1">GET</span><span style="color: #000000">] http:</span><span style="color: #008000">//localhost:7071/api/read</span>
+<span style="color: #000000">create: [</span><span style="color: #0070C1">POST</span><span style="color: #000000">] http:</span><span style="color: #008000">//localhost:7071/api/create</span>
+</code></pre>
+				<p>Hit any of those URLs and you&#39;re ready!</p>
+				<p><strong>NOTE!</strong>
+				<em>Your Node version will need to be 12</em> (or whatever version is used on Azure). One way of handling multiple Node versions is with <a href="https://github.com/nvm-sh/nvm"><code>nvm</code></a>. If you are set on using it, these instructions should get you up and ready for development:</p>
+				<ol>
+					<li><code>nvm install 12</code>, to install Node 12</li>
+					<li><code>nvm use 12</code>, to use Node 12</li>
+					<li>When you are done, run <code>nvm unload</code> but this will also eject the environment variables so <code>nvm</code> will be an unknown command from that point on (just run the commands again from <code>~/.zshrc</code> or where ever those got put in the first place)</li>
+				</ol>
+				<a href="#requests-and-examples" id="requests-and-examples" style="color: inherit; text-decoration: none;">
+					<h2>Requests and examples</h2>
+				</a>
+				<a href="#create" id="create" style="color: inherit; text-decoration: none;">
+					<h3>Create</h3>
+				</a>
+				<p>You can create a record/item with some simple string fields (<code>category</code>, <code>name</code>, <code>description</code>). All fields are mandatory.</p>
+				<a href="#query" id="query" style="color: inherit; text-decoration: none;">
+					<h4>Query</h4>
+				</a>
+				<pre><code><span style="color: #000000">/</span><span style="color: #0070C1">POST</span><span style="color: #000000"> http:</span><span style="color: #008000">//localhost:7071/api/create</span>
+
+<span style="color: #000000">{</span>
+<span style="color: #000000">  </span><span style="color: #A31515">&quot;category&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;something&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #A31515">&quot;name&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;nice name here&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #A31515">&quot;description&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;what it is&quot;</span>
+<span style="color: #000000">}</span>
+</code></pre>
+				<a href="#response" id="response" style="color: inherit; text-decoration: none;">
+					<h4>Response</h4>
+				</a>
+				<pre><code><span style="color: #000000">{</span>
+<span style="color: #000000">  </span><span style="color: #A31515">&quot;id&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;5558&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #A31515">&quot;category&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;something&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #A31515">&quot;name&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;nice name here&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #A31515">&quot;description&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;what it is&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">}</span>
+</code></pre>
+				<a href="#read" id="read" style="color: inherit; text-decoration: none;">
+					<h3>Read</h3>
+				</a>
+				<p>You can read a single, or all, records.</p>
+				<a href="#query-read-all" id="query-read-all" style="color: inherit; text-decoration: none;">
+					<h4>Query (read all)</h4>
+				</a>
+				<pre><code><span style="color: #000000">/</span><span style="color: #0070C1">GET</span><span style="color: #000000"> http:</span><span style="color: #008000">//localhost:7071/api/read/</span>
+</code></pre>
+				<a href="#response-1" id="response-1" style="color: inherit; text-decoration: none;">
+					<h4>Response</h4>
+				</a>
+				<pre><code><span style="color: #000000">[</span>
+<span style="color: #000000">  {</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;id&quot;</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;8222&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;category&quot;</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;asdf&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;name&quot;</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;that-guy&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;description&quot;</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;something&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  },</span>
+<span style="color: #000000">  {</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;id&quot;</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;5667&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;category&quot;</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;something&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;name&quot;</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;nice name here&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;description&quot;</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;what it is&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  }</span>
+<span style="color: #000000">]</span>
+</code></pre>
+				<a href="#query-read-single" id="query-read-single" style="color: inherit; text-decoration: none;">
+					<h4>Query (read single)</h4>
+				</a>
+				<pre><code><span style="color: #000000">/</span><span style="color: #0070C1">GET</span><span style="color: #000000"> http:</span><span style="color: #008000">//localhost:7071/api/read/?id=5667</span>
+</code></pre>
+				<a href="#response-2" id="response-2" style="color: inherit; text-decoration: none;">
+					<h4>Response</h4>
+				</a>
+				<pre><code><span style="color: #000000">[</span>
+<span style="color: #000000">  {</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;id&quot;</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;5667&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;category&quot;</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;something&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;name&quot;</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;nice name here&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;description&quot;</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;what it is&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  }</span>
+<span style="color: #000000">]</span>
+</code></pre>
+				<a href="#update" id="update" style="color: inherit; text-decoration: none;">
+					<h3>Update</h3>
+				</a>
+				<p>You can update an existing record. Cosmos DB does not support partial updates. To &quot;fix&quot; this, the ItemDatabase will always get the existing record first before selectively updating the fields you pass in.</p>
+				<a href="#query-1" id="query-1" style="color: inherit; text-decoration: none;">
+					<h4>Query</h4>
+				</a>
+				<pre><code><span style="color: #000000">/</span><span style="color: #0070C1">PATCH</span><span style="color: #000000"> http:</span><span style="color: #008000">//localhost:7071/api/update?id=8222&amp;category=asdf&amp;name=that-guy&amp;description=something</span>
+</code></pre>
+				<a href="#response-3" id="response-3" style="color: inherit; text-decoration: none;">
+					<h4>Response</h4>
+				</a>
+				<pre><code><span style="color: #000000">{</span>
+<span style="color: #000000">  </span><span style="color: #A31515">&quot;updatedItem&quot;</span><span style="color: #000000">: {</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;id&quot;</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;8222&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;category&quot;</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;asdf&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;name&quot;</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;that-guy&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;description&quot;</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;something&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  }</span>
+<span style="color: #000000">}</span>
+</code></pre>
+				<a href="#delete" id="delete" style="color: inherit; text-decoration: none;">
+					<h3>Delete</h3>
+				</a>
+				<p>You can delete a single record by passing in the ID of the record that should be deleted.</p>
+				<a href="#query-2" id="query-2" style="color: inherit; text-decoration: none;">
+					<h4>Query</h4>
+				</a>
+				<pre><code><span style="color: #000000">/</span><span style="color: #0070C1">DELETE</span><span style="color: #000000"> http:</span><span style="color: #008000">//localhost:7071/api/delete/?id=268</span>
+</code></pre>
+				<a href="#response-4" id="response-4" style="color: inherit; text-decoration: none;">
+					<h4>Response</h4>
+				</a>
+				<pre><code><span style="color: #000000">{</span>
+<span style="color: #000000">  </span><span style="color: #A31515">&quot;deletedItem&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;268&quot;</span>
+<span style="color: #000000">}</span>
+</code></pre>
+				<a href="#testing" id="testing" style="color: inherit; text-decoration: none;">
+					<h2>Testing</h2>
+				</a>
+				<p>Jest is used for unit testing and some kind of basic system testing for the controllers and use cases.</p>
+				<p>Because Typescript support is not fully 100% I suggest you first build your TS files into JS files and then test those. Therefore, you&#39;ll see in the tests that they point to the <code>dist</code> folder and their respective files. This is already handled by <code>npm test</code> or <code>yarn test</code> commands and the current setup, but just so you know.</p>
+				<p>The tests that exist are for basic coverage so expect that you might need to harden them should you want to use this repo in production.</p>
+				<a href="#deploying" id="deploying" style="color: inherit; text-decoration: none;">
+					<h2>Deploying</h2>
+				</a>
+				<a href="#infrastructure" id="infrastructure" style="color: inherit; text-decoration: none;">
+					<h3>Infrastructure</h3>
+				</a>
+				<p>Run <code>sh ./scripts/deploy.sh</code> or <code>npm run deploy:db</code> or <code>yarn deploy:db</code> to deploy the Azure ARM templates.</p>
+				<a href="#functions-and-api" id="functions-and-api" style="color: inherit; text-decoration: none;">
+					<h3>Functions and API</h3>
+				</a>
+				<p>Run <code>sls deploy</code> or <code>npm run deploy</code> or <code>yarn deploy</code> to do a regular &quot;dev&quot; stage deployment of the functions and their API.</p>
+				<a href="#taking-the-project-down" id="taking-the-project-down" style="color: inherit; text-decoration: none;">
+					<h2>Taking the project down</h2>
+				</a>
+				<p>Run <code>sh ./scripts/teardown.sh</code> or <code>npm run remove:db</code> or <code>yarn remove:db</code> to remove the resource group with the CosmosDB instance.</p>
+				<a href="#logging-and-monitoring" id="logging-and-monitoring" style="color: inherit; text-decoration: none;">
+					<h2>Logging and monitoring</h2>
+				</a>
+				<p>Logs should be available in <a href="https://portal.azure.com/#blade/Microsoft_Azure_Monitoring/AzureMonitoringBrowseBlade/logs">Azure Monitor Logs</a> and <code>Monitoring &gt; Log stream</code> in the Functions App panel.</p>
+				<p><strong>References</strong>:</p>
+				<ul>
+					<li><a href="https://docs.microsoft.com/en-us/azure/azure-functions/functions-monitor-log-analytics?tabs=javascript">https://docs.microsoft.com/en-us/azure/azure-functions/functions-monitor-log-analytics?tabs=javascript</a></li>
+					<li><a href="https://docs.microsoft.com/en-us/azure/azure-functions/functions-monitoring?tabs=cmd#write-logs-in-javascript-functions">https://docs.microsoft.com/en-us/azure/azure-functions/functions-monitoring?tabs=cmd#write-logs-in-javascript-functions</a></li>
+					<li><a href="https://github.com/BrianRosamilia/azure-function-log-intercept">https://github.com/BrianRosamilia/azure-function-log-intercept</a></li>
+				</ul>
+				<a href="#references" id="references" style="color: inherit; text-decoration: none;">
+					<h2>References</h2>
+				</a>
+				<ul>
+					<li><a href="https://docs.microsoft.com/en-us/azure/cosmos-db/sql-api-nodejs-get-started">https://docs.microsoft.com/en-us/azure/cosmos-db/sql-api-nodejs-get-started</a></li>
+					<li><a href="https://docs.microsoft.com/en-us/azure/azure-functions/functions-integrate-store-unstructured-data-cosmosdb?tabs=javascript">https://docs.microsoft.com/en-us/azure/azure-functions/functions-integrate-store-unstructured-data-cosmosdb?tabs=javascript</a></li>
+					<li><a href="https://dev.to/azure/explore-cosmos-with-serverless-422o">https://dev.to/azure/explore-cosmos-with-serverless-422o</a></li>
+					<li><a href="https://docs.microsoft.com/en-us/azure/cosmos-db/manage-with-cli">Manage Azure Cosmos resources using Azure CLI</a></li>
+					<li><a href="https://azure.microsoft.com/en-us/pricing/details/cosmos-db/">Azure Cosmos DB pricing</a></li>
+					<li><a href="https://www.infoworld.com/article/3531711/using-azure-cosmos-dbs-free-tier.html">How to make the most of Azure Cosmos DB’s free tier</a></li>
+				</ul>
+				<a href="#warnings-problems-troubleshooting" id="warnings-problems-troubleshooting" style="color: inherit; text-decoration: none;">
+					<h2>Warnings, problems, troubleshooting...</h2>
+				</a>
+				<ul>
+					<li>It&#39;s not uncommon to get a 400 error (<code>Error creating APIM Property</code>) when deploying with <code>sls deploy</code>. Just wait a few seconds and try again, and it should normally work on the second attempt.</li>
+					<li>You cannot set currently (July 2020) set timeout, memory size, or OS type for functions through <code>serverless.yml</code>.</li>
+					<li>There is supposedly support to configure <code>apim</code> (API Management) in <code>serverless.yml</code> but somehow you will start getting deployment errors (<code>-&gt; Function App not ready. Retry 0 of 30...</code> and continuing) if you mess about with that stuff. To the best of my abilities, I think I&#39;ve located the error to be on the <code>backends</code> section. Maybe it&#39;s not mapping correctly? Following a slightly modified version of the config in the <a href="https://www.serverless.com/framework/docs/providers/azure/guide/serverless.yml/">Serverless Framework provider reference</a> does not work, at least.</li>
+					<li>Serverless Framework and Azure together seem to have—at best—a fragile friendship. Expect that deployments stop working every now and then. Resolution is unclear; removing and redeploying (while a useless option that cannot be done safely in production) does not always seem to work either. Moving the region (also unsafe) seems to work better, but only ever do that <em>during</em> development and not after.</li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="modules.html">Exports</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/config.html">config</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/contracts_item_item.html">contracts/<wbr>Item/<wbr>Item</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/contracts_itemdatabase_itemdatabase.html">contracts/<wbr>Item<wbr>Database/<wbr>Item<wbr>Database</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/contracts_itemdatabase_itemdatabasecreate.html">contracts/<wbr>Item<wbr>Database/<wbr>Item<wbr>Database<wbr>Create</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/contracts_itemdatabase_itemdatabaseresponse.html">contracts/<wbr>Item<wbr>Database/<wbr>Item<wbr>Database<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/contracts_request_request.html">contracts/<wbr>Request/<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/controllers_create.html">controllers/create</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/controllers_delete.html">controllers/delete</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/controllers_read.html">controllers/read</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/controllers_update.html">controllers/update</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/entities_item.html">entities/<wbr>Item</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/entities_item_itemschema.html">entities/<wbr>Item/item<wbr>Schema</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/entities_item_itemvalidator.html">entities/<wbr>Item/item<wbr>Validator</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/entities_itemdatabase_itemdatabasecosmosdb.html">entities/<wbr>Item<wbr>Database/<wbr>Item<wbr>Database<wbr>CosmosDB</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/entities_itemdatabase_itemdatabaseinmemory.html">entities/<wbr>Item<wbr>Database/<wbr>Item<wbr>Database<wbr>InMemory</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/entities_itemdatabase_createdb.html">entities/<wbr>Item<wbr>Database/create<wbr>Db</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/frameworks_database_cleancosmosdbitems.html">frameworks/database/clean<wbr>Cosmos<wbr>DbItems</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/frameworks_request_checkvalidity.html">frameworks/request/check<wbr>Validity</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/frameworks_request_getvalidargs.html">frameworks/request/get<wbr>Valid<wbr>Args</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/frameworks_request_remapcleanedentries.html">frameworks/request/remap<wbr>Cleaned<wbr>Entries</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/frameworks_request_requestvalidator.html">frameworks/request/request<wbr>Validator</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/main.html">main</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/usecases_create.html">usecases/create</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/usecases_delete.html">usecases/delete</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/usecases_read.html">usecases/read</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/usecases_update.html">usecases/update</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

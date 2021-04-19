@@ -1,4 +1,4 @@
-import { RequestValidatorRequest, RequestValidatorValidator, RequestValidatorResult } from '../../app/contracts/Request/Request';
+import { RequestValidatorRequest, RequestValidatorValidator, RequestValidatorResult } from '../../contracts/Request/Request';
 
 import { allowedFields } from '../../config';
 

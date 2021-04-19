@@ -1,23 +1,29 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
-    "target": "esnext",
-    "outDir": "dist",
-    "rootDir": ".",
-    "sourceMap": true,
-    "lib": ["esnext", "dom"],
-    "noImplicitAny": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "noEmitOnError": true,
+    "alwaysStrict": true,
+    "declaration": true,
+    "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "importHelpers": true,
+    "lib": ["esnext"],
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noEmitOnError": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": true,
+    "outDir": "dist",
+    "preserveConstEnums": true,
     "removeComments": true,
+    "resolveJsonModule": true,
+    "rootDir": ".",
+    "sourceMap": true,
+    "strict": true,
     "strictFunctionTypes": true,
-    "strict": true
-    // Recommendations from "Using Babel with TypeScript" in official docs
-    //"declaration": true,
-    //"emitDeclarationOnly": true,
-    //"isolatedModules": true
-  }
+    "target": "esnext",
+  },
+  "include": ["./src/"],
+  "exclude": ["./__tests__/", "**/*.test.ts", "./__testdata__/", "./node_modules", "./dist/", "./.webpack/"]
 }

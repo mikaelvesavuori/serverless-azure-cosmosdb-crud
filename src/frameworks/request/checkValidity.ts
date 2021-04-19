@@ -1,4 +1,4 @@
-import { RequestValidatorRequest, RequestValidatorValidator, RequestValidity } from '../../app/contracts/Request/Request';
+import { RequestValidatorRequest, RequestValidatorValidator, RequestValidity } from '../../contracts/Request/Request';
 
 /**
  * @description HTTP request validator. Takes in a request object and a validator object to verify against.

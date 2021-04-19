@@ -19,7 +19,7 @@ package:
 
 functions:
   create:
-    handler: src/app/controllers/create.createController
+    handler: src/controllers/create.createController
     events:
       - http: true
         x-azure-settings:
@@ -31,7 +31,7 @@ functions:
           name: $return
           direction: out
   read:
-    handler: src/app/controllers/read.readController
+    handler: src/controllers/read.readController
     events:
       - http: true
         x-azure-settings:
@@ -43,7 +43,7 @@ functions:
           name: $return
           direction: out
   update:
-    handler: src/app/controllers/update.updateController
+    handler: src/controllers/update.updateController
     events:
       - http: true
         x-azure-settings:
@@ -55,7 +55,7 @@ functions:
           name: $return
           direction: out
   delete:
-    handler: src/app/controllers/delete.deleteController
+    handler: src/controllers/delete.deleteController
     events:
       - http: true
         x-azure-settings:

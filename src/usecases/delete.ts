@@ -1,5 +1,5 @@
-import { ItemDelete } from '../app/contracts/Item/Item';
-import { ItemDatabase } from '../app/contracts/ItemDatabase/ItemDatabase';
+import { ItemDelete } from '../contracts/Item/Item';
+import { ItemDatabase } from '../contracts/ItemDatabase/ItemDatabase';
 
 /**
  * @description The "Delete" use case which creates a database and then deletes an item from there

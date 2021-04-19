@@ -1,5 +1,5 @@
-import { ItemUpdate } from '../app/contracts/Item/Item';
-import { ItemDatabase } from '../app/contracts/ItemDatabase/ItemDatabase';
+import { ItemUpdate } from '../contracts/Item/Item';
+import { ItemDatabase } from '../contracts/ItemDatabase/ItemDatabase';
 
 /**
  * @description The "Update" use case which creates a database and then updates the item there

@@ -1,7 +1,8 @@
-import { makeItem } from '../entities/Item/index';
-import { Item } from '../entities/Item/itemSchema';
-import { ItemCreate } from '../app/contracts/Item/Item';
-import { ItemDatabase } from '../app/contracts/ItemDatabase/ItemDatabase';
+import { Item } from '../contracts/Item/Item';
+import { ItemCreate } from '../contracts/Item/Item';
+import { ItemDatabase } from '../contracts/ItemDatabase/ItemDatabase';
+
+import { makeItem } from '../frameworks/item/makeItem';
 
 /**
  * @description The "Create" use case which creates a database and then inserts the item there

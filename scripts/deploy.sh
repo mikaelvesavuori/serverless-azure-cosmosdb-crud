@@ -11,7 +11,7 @@ export DEPLOYMENT_NAME=cosmosdb-test-deployment
 export TEMPLATE_PATH=./arm/template.json
 export PARAMETERS_PATH=./arm/parameters.json
 
-export COSMOSDB_ACCOUNT_NAME=cosmosdbsqltest
+export COSMOSDB_ACCOUNT_NAME=cosmosdbsqltest-372
 export COSMOSDB_CONTAINER_NAME=TestContainer
 export COSMOSDB_DB_NAME=CosmosDbTest
 export PARTITION_KEY_PATH=/test/items
@@ -31,8 +31,8 @@ az deployment group create \
 az cosmosdb sql database create \
   --account-name $COSMOSDB_ACCOUNT_NAME \
   --name $COSMOSDB_DB_NAME \
-  --resource-group $RG_NAME \
-  --throughput $THROUGHPUT
+  --resource-group $RG_NAME
+  #--throughput $THROUGHPUT
 
 # Create SQL container
 az cosmosdb sql container create \

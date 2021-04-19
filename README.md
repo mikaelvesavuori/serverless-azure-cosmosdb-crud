@@ -25,11 +25,12 @@ The code is somewhat modeled after an official Microsoft example at [https://doc
 - **`scripts/deploy.sh`**: Deployment shell script
 - **`scripts/teardown.sh`**: Script to remove your resource group and anything in it
 - **`arm/`**: Azure ARM templates to deploy some of the resources
-- **`src/app/contracts`**: Contracts (interfaces) for various things
-- **`src/app/controllers`**: The primary entrypoint for the serverless handlers
+- **`docs/`**: Documentation generated with Typedoc
+- **`src/contracts`**: Contracts (interfaces) for various things
+- **`src/controllers`**: The primary entrypoint for the serverless handlers
 - **`src/frameworks`**: Helpers and any "details" like databases and request validators, anything that's not application-specific
 - **`src/usecases`**: Where the actual business logic should take place — in this project it's nothing more than sending data down to the right database functionality
-- **`src/entities/Item`**: Where we store domain objects (entities). In our case it's a factory to create Items and its schema
+- **`src/entities/ItemDatabase`**: Where we store domain objects (entities). In our case it's a factory to create a ItemDatabase
 
 ### Arkit code structure map
 
@@ -41,9 +42,11 @@ Run `npm install` or `yarn add`.
 
 ## Configuration
 
-Database configuration should be done in `src/infra/Config/CosmosDBConfig.mjs` for connection strings and such, and in `serverless.yml` for anything that has to do with the actual deployment.
+Database configuration should be done in `src/config.ts` for connection strings and such, and in `serverless.yml` for anything that has to do with the actual deployment.
 
-You can get the required connection string (primary key works fine) and endpoint URI either inside of the visual Azure console or by running the bottom-most command in `./scripts/deploy.sh`.
+**NOTE**: Remember that storing sensitive data like connection strings in a checked-in file is **not** a good thing, and this is something you would want to do with a secrets manager or something, in a production setting.
+
+You can get the required connection string (primary key works fine) and endpoint URI either inside of the visual Azure console or by running the bottom-most command found in `./scripts/deploy.sh`.
 
 ## Log in to Azure
 
@@ -206,7 +209,7 @@ The tests that exist are for basic coverage so expect that you might need to har
 
 ### Infrastructure
 
-Run `sh ./scripts/deploy.sh` or `npm run deploy:db` or `yarn deploy:db` to deploy the Azure ARM templates.
+Run `sh ./scripts/deploy.sh` or `npm run init` or `yarn init` to deploy the Azure ARM templates.
 
 ### Functions and API
 
@@ -214,7 +217,7 @@ Run `sls deploy` or `npm run deploy` or `yarn deploy` to do a regular "dev" stag
 
 ## Taking the project down
 
-Run `sh ./scripts/teardown.sh` or `npm run remove:db` or `yarn remove:db` to remove the resource group with the CosmosDB instance.
+Run `sh ./scripts/teardown.sh` or `npm run teardown` or `yarn teardown` to remove the resource group with the CosmosDB instance.
 
 ## Logging and monitoring
 
@@ -238,6 +241,5 @@ Logs should be available in [Azure Monitor Logs](https://portal.azure.com/#blade
 ## Warnings, problems, troubleshooting...
 
 - It's not uncommon to get a 400 error (`Error creating APIM Property`) when deploying with `sls deploy`. Just wait a few seconds and try again, and it should normally work on the second attempt.
-- You cannot set currently (July 2020) set timeout, memory size, or OS type for functions through `serverless.yml`.
 - There is supposedly support to configure `apim` (API Management) in `serverless.yml` but somehow you will start getting deployment errors (`-> Function App not ready. Retry 0 of 30...` and continuing) if you mess about with that stuff. To the best of my abilities, I think I've located the error to be on the `backends` section. Maybe it's not mapping correctly? Following a slightly modified version of the config in the [Serverless Framework provider reference](https://www.serverless.com/framework/docs/providers/azure/guide/serverless.yml/) does not work, at least.
 - Serverless Framework and Azure together seem to have—at best—a fragile friendship. Expect that deployments stop working every now and then. Resolution is unclear; removing and redeploying (while a useless option that cannot be done safely in production) does not always seem to work either. Moving the region (also unsafe) seems to work better, but only ever do that _during_ development and not after.

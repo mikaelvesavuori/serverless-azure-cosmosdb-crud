@@ -3,7 +3,7 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "name": {
-      "value": "cosmosdbsqltest"
+      "value": "cosmosdbsqltest-372"
     },
     "location": {
       "value": "westeurope"

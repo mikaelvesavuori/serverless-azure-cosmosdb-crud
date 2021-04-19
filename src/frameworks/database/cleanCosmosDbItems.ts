@@ -1,11 +1,7 @@
 /**
- * Get cleaned CosmosDB items from array of items
- *
- * @export
- * @param {object[]} items
- * @returns
+ * @description Get cleaned CosmosDB items from array of items
  */
-export function cleanCosmosDbItems(items: object[]) {
+export function cleanCosmosDbItems(items: Record<string, unknown>[]) {
   if (!items || items.length === 0) throw new Error('No items passed to cleanCosmosDbItems!');
 
   return items.map((item: any) => {

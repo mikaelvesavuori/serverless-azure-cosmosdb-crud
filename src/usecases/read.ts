@@ -1,5 +1,5 @@
-import { ItemRead } from '../app/contracts/Item/Item';
-import { ItemDatabase } from '../app/contracts/ItemDatabase/ItemDatabase';
+import { ItemRead } from '../contracts/Item/Item';
+import { ItemDatabase } from '../contracts/ItemDatabase/ItemDatabase';
 
 /**
  * @description The "Read" use case which creates a database and then reads/gets items from there
